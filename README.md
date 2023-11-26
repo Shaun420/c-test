@@ -1,2 +1,2 @@
-# C Programs
+# C (and some c++) Programs
 Some leftover files from assignments and projects....
