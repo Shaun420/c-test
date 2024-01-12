@@ -17,10 +17,10 @@ void main()
 		x = x / 2;
 		i++;
 	}
-
 	for(int j = i - 1; j >= 0; j--)
+	{
 		printf("%d", binaryNum[j]);
-
+	}
 	printf("\n");
 	printf("Time taken: %ld\n", (clock() - t1));
 }

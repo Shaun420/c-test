@@ -16,11 +16,12 @@ void main()
 	}
 	while(i < n)
 	{
-		printf("%d\n", no1);
+		printf("%d ", no1);
 		temp = no2;
 		no2 += no1;
 		no1 = temp;
 		i++;
 		continue;
 	}
+	printf("\n");
 }

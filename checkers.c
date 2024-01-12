@@ -25,36 +25,36 @@ void initialize_board()
 }
 int move_is_invalid(int p, char a, char b, char c, char d)
 {
-	printf("Debug 3\n");
+	// printf("Debug 3\n");
 	// Check if the piece belongs to player.
 	if((p == 1) && (board[b - 49][a - 65] != 'X'))
 		return 1;
 	else if((p == -1) && (board[b - 49][a - 65] != 'O'))
 		return 1;
 
-	printf("Debug 4\n");
+	// printf("Debug 4\n");
 	// Check if the destination is empty.
 	if(board[d - 49][c - 65] != ' ')
 		return 1;
 
-	printf("Debug 5\n");
+	// printf("Debug 5\n");
 	int n = (d - b) / p;
 	if(n < 1)
 		return 1;
 
-	printf("Debug 6\n");
+	// printf("Debug 6\n");
 	int l = (c - a) / p;
 	if(l != n && l != -n)
 		return 1;
 	for(int i = 1; i < n; i++)
 	{
-		if(board[b + i*p][a + i*p*l/n] != ((p == 1) ? 'O' : 'X'))
+		if(board[b + i*p - 49][a + i*p*l/n - 65] != ((p == 1) ? 'O' : 'X'))
 			return 1;
 	}
 	for(int i = 1; i < n; i++)
-		board[b + i*p][a + i*p*l/n] = ' ';
+		board[b + i*p - 49][a + i*p*l/n - 65] = ' ';
 
-	printf("Debug 7\n");
+	// printf("Debug 7\n");
 	return 0;
 }
 void move_piece(int p, char a, char b, char c, char d)
